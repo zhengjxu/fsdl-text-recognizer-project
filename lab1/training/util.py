@@ -11,7 +11,7 @@ from training.gpu_util_sampler import GPUUtilizationSampler
 
 
 EARLY_STOPPING = True
-GPU_UTIL_SAMPLER = True
+GPU_UTIL_SAMPLER = True  # for GPU utilization
 
 
 def train_model(model: Model, dataset: Dataset, epochs: int, batch_size: int, gpu_ind: Optional[int]=None, use_wandb=False) -> Model:
