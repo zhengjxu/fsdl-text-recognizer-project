@@ -6,7 +6,7 @@ from tensorflow.keras.layers import Dense, Dropout, Flatten
 
 def mlp(input_shape: Tuple[int, ...],
         output_shape: Tuple[int, ...],
-        layer_size: int=256,
+        layer_size: int=324,
         dropout_amount: float=0.2,
         num_layers: int=4) -> Model:
     """
@@ -27,7 +27,9 @@ def mlp(input_shape: Tuple[int, ...],
     model.add(Dropout(0.2))
     model.add(Dense(512, activation='relu'))
     model.add(Dropout(0.2))
-    model.add(Dense(512, activation='relu'))
+    model.add(Dense(256, activation='relu'))
+    model.add(Dropout(0.2))
+    model.add(Dense(128, activation='relu'))
     model.add(Dropout(0.2))
     model.add(Dense(128, activation='relu'))
     model.add(Dropout(0.2))
